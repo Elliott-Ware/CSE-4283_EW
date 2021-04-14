@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+</head>
+
+<body>
+    <div class="menu" id="menu">
+
+        <button onClick="openRet()">Retirement Calculator</button>
+        <button onClick="openBMI()">BMI Calculator</button>
+
+    </div>
+    <div class="BMI" id="BMI" style="display:none;">
+        <form onSubmit="BMI(document.getElementById('feet').value, document.getElementById('inches').value, document.getElementById('weight').value)">
+            <input type="text" name="feet" id="feet" placeholder="feet" />
+            <input type="text" name="inches" id="inches" placeholder="inches" />
+            <input type="text" name="weight" id="weight" placeholder="weight" />
+            <button type="submit">Submit</button>
+            <button type="submit">Run Tests</button>
+        </form>
+    </div>
+    <div class="Retirement" id="Retirement" style="display:none;">
+        <form onSubmit="Retirement(document.getElementById('age').value, document.getElementById('salary').value, document.getElementById('percent').value, document.getElementById('goal').value)">
+            <input type="text" name="age" id="age" placeholder="age" />
+            <input type="text" name="salary" id="salary" placeholder="salary" />
+            <input type="text" name="percent" id="percent" placeholder="% saved each year" />
+            <input type="text" name="goal" id="goal" placeholder="goal" />
+            <button type="submit">Submit</button>
+            <button type="submit">Run Tests</button>
+        </form>
+    </div>
+</body>
+<script>
+    function BMI(feet, inches, weight) {
+        feet = Number(feet);
+        inches = Number(inches);
+        weight = Number(weight);
+        feet = feet * 12;
+        inches = inches + feet;
+        var height = inches * .0254;
+        height *= height;
+        weight = weight * .45359;
+        var BMI = weight / height;
+        alert(BMI);
+    }
+
+    function Retirement(age, salary, percent, goal) {
+        age = Number(age);
+        salary = Number(salary);
+        percent = Number(percent);
+        goal = Number(goal);
+        percent = percent / 100;
+        var savingsPerYear = (salary * percent) * 1.35;
+        var years = goal / savingsPerYear;
+        var ageGoalMet = age + years;
+        alert(Math.ceil(ageGoalMet));
+    }
+
+    function openRet() {
+
+        document.getElementById("Retirement").style.display = 'block';
+        document.getElementById("BMI").style.display = 'none';
+        document.getElementById("menu").style.display = 'none';
+    }
+
+    function openBMI() {
+        document.getElementById("BMI").style.display = 'block';
+        document.getElementById("Retirement").style.display = 'none';
+        document.getElementById("menu").style.display = 'none';
+    }
+</script>
+
+</html>

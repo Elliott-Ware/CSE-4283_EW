@@ -1,0 +1,38 @@
+.menu {
+    text-align: center;
+    background-color: #1d1d1d;
+    font-family: 'Teko', sans-serif;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.BMI {
+    text-align: center;
+    background-color: #1d1d1d;
+    font-family: 'Teko', sans-serif;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.Retirement {
+    text-align: center;
+    background-color: #1d1d1d;
+    font-family: 'Teko', sans-serif;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+Button {
+    height: 50px;
+    width: 100px;
+    background-color: #008cff !important;
+    color: white !important;
+    border-color: #003375 !important;
+    margin: 25px;
+}
