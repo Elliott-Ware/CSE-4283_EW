@@ -1,1 +1,13 @@
-language: html
+language: node_js
+node_js:
+- "stable"
+
+cache: npm
+
+install:
+- npm ci
+
+script:
+- npm test
+
+
